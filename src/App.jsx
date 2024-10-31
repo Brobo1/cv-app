@@ -24,6 +24,8 @@ function App() {
 
   const [edit, setEdit] = useState(false);
 
+  const [test, setTest] = useState("123");
+
   function handleEdit() {
     setEdit((prev) => !prev);
   }
@@ -38,18 +40,36 @@ function App() {
     }));
   }
 
-  console.log(info.general.name);
+  function handleTest(e) {
+    setTest(() => e.target.textContent);
+    console.log(test);
+  }
 
   return (
     <>
-      {edit ? (
-        <input type="text" />
-      ) : (
-        <p className={`input-text`}>{info.general.name}</p>
-      )}
-      <button onClick={handleEdit}>{edit ? "Save" : "Edit"}</button>
+      <p contentEditable={edit} onInput={handleTest}>
+        {test}
+      </p>
+      <button className={"edit-btn"} onClick={handleEdit}>
+        {edit ? "Save" : "Edit"}
+      </button>
     </>
   );
+  //
+  // return (
+  //   <>
+  //     <div className={"input-container"}>
+  //       {edit ? (
+  //         <input type="text" />
+  //       ) : (
+  //         <p className={`input-text`}>{info.general.name}</p>
+  //       )}
+  //     </div>
+  //     <button className={"edit-btn"} onClick={handleEdit}>
+  //       {edit ? "Save" : "Edit"}
+  //     </button>
+  //   </>
+  // );
 }
 
 export default App;

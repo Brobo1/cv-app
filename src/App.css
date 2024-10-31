@@ -5,8 +5,14 @@
   text-align: center;
 }
 
+.input-container {
+  height: 50px;
+  width: 200px;
+}
 
 .input-text {
+  margin: 0;
+  padding: 0;
   border-radius: 5px;
   font-size: 1.2em;
 }
@@ -16,7 +22,9 @@
 }
 
 input {
-  height: 30px;
-  width: 50px;
 
+}
+
+.edit-btn {
+  width: 100px;
 }
