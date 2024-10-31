@@ -27,11 +27,12 @@ export function InputTag(props) {
       ...prev,
       general: {
         ...prev.general,
-        name: e.target.value,
+        [props.stuff]: e.target.value,
       },
     }));
   }
 
+  //TODO: Capitalize placeholders
   return (
     <>
       <div id="content">
@@ -40,12 +41,16 @@ export function InputTag(props) {
             <input
               className={"input-field"}
               type="text"
-              placeholder={"Name"}
-              value={info.general.name}
+              placeholder={[props.stuff].toString()}
+              value={info.general[props.stuff]}
               onChange={handleName}
             />
           ) : (
-            <p className={`input-text`}>{info.general.name}</p>
+            <p className={`input-text`}>
+              {info.general[props.stuff]
+                ? info.general[props.stuff]
+                : [props.stuff]}
+            </p>
           )}
         </div>
       </div>

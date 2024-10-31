@@ -12,7 +12,8 @@ function App() {
   return (
     <>
       <div id="content">
-        <InputTag edit={edit}></InputTag>
+        <InputTag edit={edit} stuff={"name"}></InputTag>
+        <InputTag edit={edit} stuff={"email"}></InputTag>
         <button className={"edit-btn"} onClick={handleEdit}>
           {edit ? "Save" : "Edit"}
         </button>
