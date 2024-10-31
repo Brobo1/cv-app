@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.input-text {
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.editable {
+  outline: 1px solid #6c6c6c;
+}
+
+input {
+  height: 30px;
+  width: 50px;
+
+}
