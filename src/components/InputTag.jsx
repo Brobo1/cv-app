@@ -22,12 +22,12 @@ export function InputTag(props) {
     },
   });
 
-  function handleName(e) {
+  function handleFields(e) {
     setInfo((prev) => ({
       ...prev,
-      general: {
-        ...prev.general,
-        [props.stuff]: e.target.value,
+      [props.section]: {
+        ...prev[props.section],
+        [props.item]: e.target.value,
       },
     }));
   }
@@ -41,15 +41,15 @@ export function InputTag(props) {
             <input
               className={"input-field"}
               type="text"
-              placeholder={[props.stuff].toString()}
-              value={info.general[props.stuff]}
-              onChange={handleName}
+              placeholder={[props.item].toString()}
+              value={info.general[props.item]}
+              onChange={handleFields}
             />
           ) : (
             <p className={`input-text`}>
-              {info.general[props.stuff]
-                ? info.general[props.stuff]
-                : [props.stuff]}
+              {info.general[props.item]
+                ? info.general[props.item]
+                : [props.item]}
             </p>
           )}
         </div>
